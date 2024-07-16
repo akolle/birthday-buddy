@@ -12,7 +12,7 @@ const App = () => {
   return (
     <main>
       <section className="container">
-        <h2 style={{margin: "50px"}}>test There are {list.length} birthdays today.</h2>
+        <h2 style={{margin: "50px"}}>There are {list.length} birthdays today.</h2>
         {list.map((person) => {
           const {name, age, image} = person;
           return (
