@@ -1,28 +1,20 @@
 import data from "./data";
 import { useState } from "react";
+import List from "./List";
 
 const App = () => {
   
-  const [list, setList] = useState(data);
+  const [people, setPeople] = useState(data);
   
   const clearAll = () => {
-    setList([]);
+    setPeople([]);
   }
 
   return (
     <main>
       <section className="container">
-        <h2 style={{margin: "50px"}}>There are {list.length} birthdays today.</h2>
-        {list.map((person) => {
-          const {name, age, image} = person;
-          return (
-            <div>
-              <h2>{name}</h2>
-              <h4>{age}</h4>
-              <img className='img' src={image}></img>   
-            </div>
-          )
-        })}
+        <h3>{people.length} birthday today</h3>
+        <List people={people} />
         <button type="button" className="btn btn-block" onClick={clearAll}>clear all</button>
       </section>
     </main>
